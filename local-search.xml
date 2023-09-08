@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>inkscape</title>
+    <link href="/2023/09/08/inkscape/"/>
+    <url>/2023/09/08/inkscape/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Inkscape-SVG-自由绘图工具"><a href="#Inkscape-SVG-自由绘图工具" class="headerlink" title="Inkscape SVG 自由绘图工具"></a><a href="https://inkscape.org/zh-hans/doc/tutorials/basic/tutorial-basic.html">Inkscape</a> SVG 自由绘图工具</h1><h2 id="设置文档属性"><a href="#设置文档属性" class="headerlink" title="设置文档属性"></a>设置文档属性</h2><p><img src="/img/inkscape/file-property.png"></p><h2 id="单位设置"><a href="#单位设置" class="headerlink" title="单位设置"></a>单位设置</h2><p><img src="/img/inkscape/file-property.png"></p><ol><li>单位按需设置，可选px, mm 等</li><li>画布大小按需设置宽高</li><li>设置尺寸比例，此处会影响导出未svg 时的大小，建议默认设置为1</li></ol><h2 id="xml-快速编辑"><a href="#xml-快速编辑" class="headerlink" title="xml 快速编辑"></a>xml 快速编辑</h2><p><img src="/img/inkscape/xml-editor.png"></p><ul><li>通过右侧配置蓝可以快速获取页面上节点属性信息&amp;&amp; 编辑</li></ul><h2 id="导出文件"><a href="#导出文件" class="headerlink" title="导出文件"></a>导出文件</h2><p><img src="/img/inkscape/file-export.png"></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>svg</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>micro-app 搭建记录</title>
     <link href="/2023/09/06/micro-app/"/>
     <url>/2023/09/06/micro-app/</url>
