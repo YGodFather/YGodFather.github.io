@@ -24,9 +24,9 @@
 <meta property="og:description" content="搭建平台基座｜ 基座与平台无关，技术栈 vite + vue3 + element-plus  通过vite 脚手架搭建项目  123# npm 7+, extra double-dash is needed:npm create vite@latest my-vue-app -- --template vue-ts  安装 micro-app  1npm i @micro-zoe&#x2F;micro-a">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-09-06T15:11:39.000Z">
-<meta property="article:modified_time" content="2023-09-11T05:46:39.860Z">
+<meta property="article:modified_time" content="2023-09-11T06:03:17.625Z">
 <meta property="article:author" content="Rui Yang">
-<meta property="article:tag" content="微前端">
+<meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary_large_image">
   
   
@@ -222,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.6k 字
+          4.8k 字
         
       </span>
     
@@ -233,7 +233,7 @@
         
         
         
-          39 分钟
+          40 分钟
         
       </span>
     
@@ -325,7 +325,21 @@ vite.config.ts</li>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> &#123; fileURLToPath, <span class="hljs-variable constant_">URL</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;node:url&#x27;</span><br><br><span class="hljs-keyword">import</span> &#123; defineConfig &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vite&#x27;</span><br><span class="hljs-keyword">import</span> vue <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@vitejs/plugin-vue&#x27;</span><br><span class="hljs-keyword">import</span> vueJsx <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@vitejs/plugin-vue-jsx&#x27;</span><br><span class="hljs-keyword">import</span> &#123; dynamicBase &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;vite-plugin-dynamic-base&#x27;</span><br><span class="hljs-comment">// https://vitejs.dev/config/</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title function_">defineConfig</span>(&#123;<br>  <span class="hljs-attr">base</span>: process.<span class="hljs-property">env</span>.<span class="hljs-property">NODE_ENV</span> === <span class="hljs-string">&quot;production&quot;</span> ? <span class="hljs-string">&quot;__dynamic_base__&quot;</span> : <span class="hljs-string">&quot;/child/vite-vue/&quot;</span>,<br>  <span class="hljs-attr">plugins</span>: [<br>    <span class="hljs-title function_">vue</span>(),<br>    <span class="hljs-title function_">vueJsx</span>(),<br>    <span class="hljs-comment">//打包后 </span><br>    <span class="hljs-title function_">dynamicBase</span>(&#123;<br>      <span class="hljs-attr">publicPath</span>: <span class="hljs-string">&#x27;window.__dynamic_base__&#x27;</span>,<br>      <span class="hljs-attr">transformIndexHtml</span>:  <span class="hljs-literal">true</span><br>    &#125;)<br>  ],<br>  <span class="hljs-attr">server</span>: &#123;<br>    <span class="hljs-attr">port</span>: <span class="hljs-number">8004</span>,<br>    <span class="hljs-attr">headers</span>: &#123;<br>      <span class="hljs-string">&#x27;Access-Control-Allow-Origin&#x27;</span>: <span class="hljs-string">&#x27;*&#x27;</span>,<br>    &#125;,<br>    <span class="hljs-attr">cors</span>: <span class="hljs-literal">true</span>,<br>  &#125;,<br>  <span class="hljs-attr">resolve</span>: &#123;<br>    <span class="hljs-attr">alias</span>: &#123;<br>      <span class="hljs-string">&#x27;@&#x27;</span>: <span class="hljs-title function_">fileURLToPath</span>(<span class="hljs-keyword">new</span> <span class="hljs-title function_">URL</span>(<span class="hljs-string">&#x27;./src&#x27;</span>, <span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">url</span>))<br>    &#125;<br>  &#125;<br>&#125;)<br><br></code></pre></td></tr></table></figure>
 
 <h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><p><a target="_blank" rel="noopener" href="https://zeroing.jd.com/micro-app/docs.html#/zh-cn/deploy">参考官网配置</a></p>
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
+<h1 id="问题-解决方案"><a href="#问题-解决方案" class="headerlink" title="问题&amp;&amp;解决方案"></a>问题&amp;&amp;解决方案</h1><ol>
+<li><p>部署后无法加载vite 子应用，原因可能</p>
+<ul>
+<li>window.__dynamic_base__ 属性未初始化成功</li>
+<li>基座应用加载vite-vue 子应用时使用了预加载模式，</li>
+</ul>
+</li>
+<li><p>父子资源样式相互污染</p>
+<ul>
+<li>如果基座样式库使用 elment-plus 可以通过自定义命名空间规避污染</li>
+<li>开启沙盒模式进行样式隔离</li>
+</ul>
+</li>
+</ol>
+
                 
               </div>
             
@@ -337,7 +351,7 @@ vite.config.ts</li>
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="../../../../tags/%E5%BE%AE%E5%89%8D%E7%AB%AF/" class="print-no-link">#微前端</a>
+        <a href="../../../../tags/vue/" class="print-no-link">#vue</a>
       
     </div>
   
@@ -394,9 +408,9 @@ vite.config.ts</li>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="../../08/hello-world/" title="Hello World">
+                      <a href="../../08/inkscape/" title="inkscape">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Hello World</span>
+                        <span class="hidden-mobile">inkscape</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
