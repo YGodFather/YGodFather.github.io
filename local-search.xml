@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>wasm编译处理</title>
+    <link href="/2024/01/14/wasm-md/"/>
+    <url>/2024/01/14/wasm-md/</url>
+    
+    <content type="html"><![CDATA[<h2 id="mac-端编译-wasm"><a href="#mac-端编译-wasm" class="headerlink" title="mac 端编译 wasm"></a>mac 端编译 wasm</h2><ol><li>下载Emscripten代码到本地<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Get the emsdk repo    </span><br>git <span class="hljs-built_in">clone</span> https://github.com/emscripten-core/emsdk.git<br><br><span class="hljs-comment"># Enter that directory    </span><br><span class="hljs-built_in">cd</span> emsdk<br></code></pre></td></tr></table></figure></li><li>安装最新的工具<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash"><br><span class="hljs-comment"># Download and install the latest SDK tools.    </span><br>./emsdk install latest<br><br><span class="hljs-comment"># Make the &quot;latest&quot; SDK &quot;active&quot; for the current user. (writes .emscripten file)    </span><br>./emsdk activate latest<br><br><span class="hljs-comment"># Activate PATH and other environment variables in the current terminal    </span><br><span class="hljs-built_in">source</span> ./emsdk_env.sh <br></code></pre></td></tr></table></figure>b. 一个可以运行WebAssembly的浏览器<br>目前各大主流浏览器都已经支持webassembly，包括：chrome、edge、safari、firefox、opera。除了，emmm，IE。只需要将浏览器升级到新版本，并且开启相应的配置即可。</li></ol><p>c. 一个简单的C语言程序<br>这里使用C语言编写一个简单的helloworld程序：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#include &lt;stdio.h&gt;</span><br><br>int <span class="hljs-function"><span class="hljs-title">main</span></span>() &#123;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Hello, world!&quot;</span>);<br>    <span class="hljs-built_in">return</span> 0;<br>&#125;<br></code></pre></td></tr></table></figure><ol start="2"><li>编译C代码到webassembly<br>使用emscripten工具将C代码编译为WebAssembly。编译完成后，会得到三个新文件，分别以.html，.js和.wasm结尾。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Compile c file to wasm file</span><br>emcc hello.c -s WASM=1 -s FORCE_FILESYSTEM=1 -s EXIT_RUNTIME=1 -o hello.html<br></code></pre></td></tr></table></figure></li><li>运行<br>启动一个文件服务器，使用浏览器打开localhost:8080&#x2F;hello.html文件，看到控制台显示”Hello, world!”，表示构建成功。</li></ol><p>启动文件服务器</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Start file server    </span><br>emrun --no_browser --port 8080 .<br></code></pre></td></tr></table></figure><ol start="2"><li>浏览器打开<a href="http://localhost:8080/hello.html">http://localhost:8080/hello.html</a></li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>wasm</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>搜索插入位置</title>
     <link href="/2023/12/05/algorithm/code-35/"/>
     <url>/2023/12/05/algorithm/code-35/</url>

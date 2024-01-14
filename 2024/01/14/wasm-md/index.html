@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="../../../../../img/fluid.png">
-  <link rel="icon" href="../../../../../img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../../../../img/fluid.png">
+  <link rel="icon" href="../../../../img/fluid.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -16,24 +16,24 @@
   <meta name="author" content="Rui Yang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="力扣请必须使用时间复杂度为 O(log n) 的算法。给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。 请必须使用时间复杂度为 O(log n) 的算法。 123456789101112131415161718const searchInsert &#x3D; function(nums, target) &amp;#123;    &#x2F;&#x2F;  区">
+    <meta name="description" content="mac 端编译 wasm 下载Emscripten代码到本地12345# Get the emsdk repo    git clone https:&#x2F;&#x2F;github.com&#x2F;emscripten-core&#x2F;emsdk.git# Enter that directory    cd emsdk 安装最新的工具123456789# Download and install the latest SD">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搜索插入位置">
-<meta property="og:url" content="http://example.com/2023/12/05/algorithm/code-35/index.html">
+<meta property="og:title" content="wasm编译处理">
+<meta property="og:url" content="http://example.com/2024/01/14/wasm-md/index.html">
 <meta property="og:site_name" content="irelia">
-<meta property="og:description" content="力扣请必须使用时间复杂度为 O(log n) 的算法。给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。 请必须使用时间复杂度为 O(log n) 的算法。 123456789101112131415161718const searchInsert &#x3D; function(nums, target) &amp;#123;    &#x2F;&#x2F;  区">
+<meta property="og:description" content="mac 端编译 wasm 下载Emscripten代码到本地12345# Get the emsdk repo    git clone https:&#x2F;&#x2F;github.com&#x2F;emscripten-core&#x2F;emsdk.git# Enter that directory    cd emsdk 安装最新的工具123456789# Download and install the latest SD">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-12-05T13:57:55.000Z">
-<meta property="article:modified_time" content="2023-12-05T14:29:07.114Z">
+<meta property="article:published_time" content="2024-01-14T06:48:06.000Z">
+<meta property="article:modified_time" content="2024-01-14T07:24:59.792Z">
 <meta property="article:author" content="Rui Yang">
-<meta property="article:tag" content="algorithm">
+<meta property="article:tag" content="wasm">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>搜索插入位置 - irelia</title>
+  <title>wasm编译处理 - irelia</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -57,12 +57,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="../../../../../css/main.css" />
+<link  rel="stylesheet" href="../../../../css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="../../../../../css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="../../../../css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="../../../../../css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="../../../../css/highlight-dark.css" />
   
 
 
@@ -78,8 +78,8 @@
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="../../../../../js/utils.js" ></script>
-  <script  src="../../../../../js/color-schema.js" ></script>
+  <script  src="../../../../js/utils.js" ></script>
+  <script  src="../../../../js/color-schema.js" ></script>
   
 
 
@@ -96,7 +96,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="../../../../../index.html">
+    <a class="navbar-brand" href="../../../../index.html">
       <strong>irelia</strong>
     </a>
 
@@ -115,7 +115,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="../../../../../index.html">
+              <a class="nav-link" href="../../../../index.html">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -127,7 +127,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="../../../../../archives/">
+              <a class="nav-link" href="../../../../archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -139,7 +139,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="../../../../../categories/">
+              <a class="nav-link" href="../../../../categories/">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -151,7 +151,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="../../../../../tags/">
+              <a class="nav-link" href="../../../../tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -163,7 +163,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="../../../../../about/">
+              <a class="nav-link" href="../../../../about/">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -193,13 +193,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('../../../../../img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('../../../../img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="搜索插入位置"></span>
+            <span id="subtitle" data-typed-text="wasm编译处理"></span>
           
         </div>
 
@@ -210,8 +210,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-12-05 21:57" pubdate>
-          2023年12月5日 晚上
+        <time datetime="2024-01-14 14:48" pubdate>
+          2024年1月14日 下午
         </time>
       </span>
     
@@ -222,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          435 字
+          990 字
         
       </span>
     
@@ -233,7 +233,7 @@
         
         
         
-          4 分钟
+          9 分钟
         
       </span>
     
@@ -270,14 +270,28 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">搜索插入位置</h1>
+            <h1 id="seo-header">wasm编译处理</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="力扣"><a href="#力扣" class="headerlink" title="力扣"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/search-insert-position/description/">力扣</a></h1><p>请必须使用时间复杂度为 O(log n) 的算法。<br>给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。</p>
-<p>请必须使用时间复杂度为 O(log n) 的算法。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs js"><br><span class="hljs-keyword">const</span> searchInsert = <span class="hljs-keyword">function</span>(<span class="hljs-params">nums, target</span>) &#123;<br>    <span class="hljs-comment">//  区间左开右闭 [left, right]</span><br>    <span class="hljs-keyword">let</span> left = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">let</span> right = nums.<span class="hljs-property">length</span> - <span class="hljs-number">1</span><br>    <span class="hljs-keyword">while</span>(left &lt;= right) &#123;<br>        <span class="hljs-keyword">let</span> mid = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>((left + right) / <span class="hljs-number">2</span>)<br>        <span class="hljs-keyword">if</span>(nums[mid] === target) &#123;<br>            <span class="hljs-keyword">return</span> mid<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid] &lt; target) &#123;<br>            left = mid + <span class="hljs-number">1</span><br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            right = mid - <span class="hljs-number">1</span><br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> right + <span class="hljs-number">1</span><br>&#125;;<br><br></code></pre></td></tr></table></figure>
+                <h2 id="mac-端编译-wasm"><a href="#mac-端编译-wasm" class="headerlink" title="mac 端编译 wasm"></a>mac 端编译 wasm</h2><ol>
+<li>下载Emscripten代码到本地<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Get the emsdk repo    </span><br>git <span class="hljs-built_in">clone</span> https://github.com/emscripten-core/emsdk.git<br><br><span class="hljs-comment"># Enter that directory    </span><br><span class="hljs-built_in">cd</span> emsdk<br></code></pre></td></tr></table></figure></li>
+<li>安装最新的工具<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash"><br><span class="hljs-comment"># Download and install the latest SDK tools.    </span><br>./emsdk install latest<br><br><span class="hljs-comment"># Make the &quot;latest&quot; SDK &quot;active&quot; for the current user. (writes .emscripten file)    </span><br>./emsdk activate latest<br><br><span class="hljs-comment"># Activate PATH and other environment variables in the current terminal    </span><br><span class="hljs-built_in">source</span> ./emsdk_env.sh <br></code></pre></td></tr></table></figure>
+b. 一个可以运行WebAssembly的浏览器<br>目前各大主流浏览器都已经支持webassembly，包括：chrome、edge、safari、firefox、opera。除了，emmm，IE。只需要将浏览器升级到新版本，并且开启相应的配置即可。</li>
+</ol>
+<p>c. 一个简单的C语言程序<br>这里使用C语言编写一个简单的helloworld程序：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#include &lt;stdio.h&gt;</span><br><br>int <span class="hljs-function"><span class="hljs-title">main</span></span>() &#123;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Hello, world!&quot;</span>);<br>    <span class="hljs-built_in">return</span> 0;<br>&#125;<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>编译C代码到webassembly<br>使用emscripten工具将C代码编译为WebAssembly。编译完成后，会得到三个新文件，分别以.html，.js和.wasm结尾。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Compile c file to wasm file</span><br>emcc hello.c -s WASM=1 -s FORCE_FILESYSTEM=1 -s EXIT_RUNTIME=1 -o hello.html<br></code></pre></td></tr></table></figure></li>
+<li>运行<br>启动一个文件服务器，使用浏览器打开localhost:8080&#x2F;hello.html文件，看到控制台显示”Hello, world!”，表示构建成功。</li>
+</ol>
+<p>启动文件服务器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># Start file server    </span><br>emrun --no_browser --port 8080 .<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>浏览器打开<a target="_blank" rel="noopener" href="http://localhost:8080/hello.html">http://localhost:8080/hello.html</a></li>
+</ol>
+
                 
               </div>
             
@@ -285,32 +299,11 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="../../../../../categories/%E7%AE%97%E6%B3%95%E9%A2%98/" class="category-chain-item">算法题</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
   
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="../../../../../tags/algorithm/" class="print-no-link">#algorithm</a>
+        <a href="../../../../tags/wasm/" class="print-no-link">#wasm</a>
       
     </div>
   
@@ -322,8 +315,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>搜索插入位置</div>
-      <div>http://example.com/2023/12/05/algorithm/code-35/</div>
+      <div>wasm编译处理</div>
+      <div>http://example.com/2024/01/14/wasm-md/</div>
     </div>
     <div class="license-meta">
       
@@ -335,7 +328,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年12月5日</div>
+          <div>2024年1月14日</div>
         </div>
       
       
@@ -367,18 +360,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="../../../../../2024/01/14/wasm-md/" title="wasm编译处理">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">wasm编译处理</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="../../../04/vim/vim-code/" title="vim 常用命令">
-                        <span class="hidden-mobile">vim 常用命令</span>
+                      <a href="../../../../2023/12/05/algorithm/code-35/" title="搜索插入位置">
+                        <span class="hidden-mobile">搜索插入位置</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -531,8 +518,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="../../../../../js/events.js" ></script>
-<script  src="../../../../../js/plugins.js" ></script>
+<script  src="../../../../js/events.js" ></script>
+<script  src="../../../../js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -554,7 +541,7 @@
 
 
   
-    <script  src="../../../../../js/img-lazyload.js" ></script>
+    <script  src="../../../../js/img-lazyload.js" ></script>
   
 
 
@@ -653,7 +640,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="../../../../../js/local-search.js" ></script>
+  <script  src="../../../../js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -663,7 +650,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="../../../../../js/boot.js" ></script>
+<script  src="../../../../js/boot.js" ></script>
 
 
   
