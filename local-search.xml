@@ -112,6 +112,25 @@
   
   
   <entry>
+    <title>micro-app 基座应用和子应用共享window 全局变量</title>
+    <link href="/2023/09/07/micro-deploy/micro-app_01/"/>
+    <url>/2023/09/07/micro-deploy/micro-app_01/</url>
+    
+    <content type="html"><![CDATA[<p>micro-app 运行时沙盒机制，会将基座应用window 自己配置的全局变量无法共享<br>具体可以参考</p><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * rewrite special properties of window</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> appName app name</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> microAppWindow child app microWindow</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">patchWindowProperty</span> (<br>  <span class="hljs-attr">microAppWindow</span>: microAppWindowType,<br>):<span class="hljs-built_in">void</span> &#123;<br>  <span class="hljs-keyword">const</span> rawWindow = globalEnv.<span class="hljs-property">rawWindow</span><br>  <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">getOwnPropertyNames</span>(rawWindow)<br>    .<span class="hljs-title function_">filter</span>(<span class="hljs-function">(<span class="hljs-params">key: <span class="hljs-built_in">string</span></span>) =&gt;</span> &#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-regexp">/^on/</span>.<span class="hljs-title function_">test</span>(key) &amp;&amp; !<span class="hljs-variable constant_">SCOPE_WINDOW_ON_EVENT</span>.<span class="hljs-title function_">includes</span>(key)<br>    &#125;)<br>    .<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">eventName: <span class="hljs-built_in">string</span></span>) =&gt;</span> &#123;<br>      <span class="hljs-keyword">const</span> &#123; enumerable, writable, set &#125; = <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">getOwnPropertyDescriptor</span>(rawWindow, eventName) || &#123;<br>        <span class="hljs-attr">enumerable</span>: <span class="hljs-literal">true</span>,<br>        <span class="hljs-attr">writable</span>: <span class="hljs-literal">true</span>,<br>      &#125;<br>      <span class="hljs-title function_">rawDefineProperty</span>(microAppWindow, eventName, &#123;<br>        enumerable,<br>        <span class="hljs-attr">configurable</span>: <span class="hljs-literal">true</span>,<br>        <span class="hljs-attr">get</span>: <span class="hljs-function">() =&gt;</span> rawWindow[eventName],<br>        <span class="hljs-attr">set</span>: writable ?? !!set<br>          ? <span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> &#123; rawWindow[eventName] = value &#125;<br>          : <span class="hljs-literal">undefined</span>,<br>      &#125;)<br>    &#125;)<br>&#125;<br><br></code></pre></td></tr></table></figure><p>如果在项目中想通过子应用直接访问 基座应用window上属性有两种方案<br>例如基座应用的window对象上自定影了 $name</p><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-variable language_">window</span>.<span class="hljs-property">$name</span> = <span class="hljs-string">&#x27;xxxxxx&#x27;</span><br></code></pre></td></tr></table></figure><ol><li>子应用中通过window.rawWindow 拿到原始对象</li></ol><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> name = <span class="hljs-variable language_">window</span>.<span class="hljs-property">rawWindow</span>.<span class="hljs-property">$name</span><br><br></code></pre></td></tr></table></figure><ol start="2"><li>通过micro-app 的内置的pl</li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>微前端</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>micro-app 搭建记录</title>
     <link href="/2023/09/06/micro-deploy/micro-app/"/>
     <url>/2023/09/06/micro-deploy/micro-app/</url>
