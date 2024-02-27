@@ -20,12 +20,12 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="electron 常见问题&amp;&amp;解决方案">
 <meta property="og:url" content="http://example.com/2023/10/25/electron/electron-question/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="irelia">
 <meta property="og:description" content="扩展electron vue-devtoolsdev-tool 官方指导文档 开启devTool1234567&#x2F;&#x2F; create windown 调用createWindow() &amp;#123;    ....    mainWindow.loadURL(VITE_DEV_SERVER_URL);    mainWindow.webContents.openDevTools();&amp;#125; 加载v">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/electron/electron-devtool.png">
 <meta property="article:published_time" content="2023-10-25T07:34:16.000Z">
-<meta property="article:modified_time" content="2023-10-25T09:54:49.009Z">
+<meta property="article:modified_time" content="2024-02-19T01:34:11.401Z">
 <meta property="article:author" content="Rui Yang">
 <meta property="article:tag" content="electron">
 <meta name="twitter:card" content="summary_large_image">
@@ -35,7 +35,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>electron 常见问题&amp;&amp;解决方案 - Hexo</title>
+  <title>electron 常见问题&amp;&amp;解决方案 - irelia</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -224,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.3k 字
+          2.7k 字
         
       </span>
     
@@ -235,7 +235,7 @@
         
         
         
-          20 分钟
+          23 分钟
         
       </span>
     
@@ -289,13 +289,23 @@
 <h1 id="Electron-启动后端服务"><a href="#Electron-启动后端服务" class="headerlink" title="Electron 启动后端服务"></a>Electron 启动后端服务</h1><h2 id="通过execFile-启动可执行的exe文件"><a href="#通过execFile-启动可执行的exe文件" class="headerlink" title="通过execFile 启动可执行的exe文件"></a>通过execFile 启动可执行的exe文件</h2><p>例如我们现在有一个app.exe 放入项目的根目录 resources文件下</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> &#123;execFile&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;‘child_process’&#x27;</span><br><span class="hljs-keyword">const</span> backend = path.<span class="hljs-title function_">join</span>(process.<span class="hljs-title function_">cwd</span>(), <span class="hljs-string">&#x27;/resources/app.exe&#x27;</span>)<br>cosnt childProcess = <span class="hljs-title function_">execfile</span>(<br> backend,<br> &#123;<br>  <span class="hljs-attr">windowsHide</span>: <span class="hljs-literal">true</span>,<br> &#125;,<br> <span class="hljs-function">(<span class="hljs-params">err, stdout, stderr</span>) =&gt;</span> &#123;<br>  <span class="hljs-keyword">if</span> (err) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(err);<br>  &#125;<br>  <span class="hljs-keyword">if</span> (stdout) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(stdout);<br>  &#125;<br>  <span class="hljs-keyword">if</span> (stderr) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(stderr);<br>  &#125;<br> &#125;<br>)<br></code></pre></td></tr></table></figure>
 <h2 id="electron-退出"><a href="#electron-退出" class="headerlink" title="electron 退出"></a>electron 退出</h2><p>electron 应用退出后可执行命令退出子程序<br>程序执行再 <strong>app.quit()</strong> 之前执行</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> &#123; exec &#125;  <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;child_process&#x27;</span>;<br><span class="hljs-title function_">exec</span>(<span class="hljs-string">&#x27;taskkill /f /t /im app.exe&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">err, stdout, stderr</span>) =&gt;</span> &#123;<br> <span class="hljs-keyword">if</span> (err) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(err)<br> <span class="hljs-keyword">return</span>;<br> &#125;<br> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`stdout: <span class="hljs-subst">$&#123;stdout&#125;</span>`</span>);<br> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`stderr: <span class="hljs-subst">$&#123;stderr&#125;</span>`</span>);<br>&#125;);<br></code></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> &#123; exec &#125;  <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;child_process&#x27;</span>;<br><span class="hljs-title function_">exec</span>(<span class="hljs-string">&#x27;taskkill /f /t /im app.exe&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">err, stdout, stderr</span>) =&gt;</span> &#123;<br> <span class="hljs-keyword">if</span> (err) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(err)<br> <span class="hljs-keyword">return</span>;<br> &#125;<br>&#125;);<br></code></pre></td></tr></table></figure>
 <h1 id="应用单开"><a href="#应用单开" class="headerlink" title="应用单开"></a>应用单开</h1><p>可通过 requestSingleInstanceLock() 方案添加应用单开处理<br>requestSingleInstanceLock API 可以参考<a target="_blank" rel="noopener" href="https://www.electronjs.org/zh/docs/latest/api/app#requestSingleInstanceLock">官网解释</a></p>
 <ul>
 <li>通过requestSingleInstanceLock 获取单例</li>
 <li>根据 单例锁状态 判断是否展示应用还是关闭应用<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> appInstanceLock = app.<span class="hljs-title function_">requestSingleInstanceLock</span>();<br><span class="hljs-keyword">if</span> (!appInstanceLock) &#123;<br>  app.<span class="hljs-title function_">quit</span>();<br>&#125; <span class="hljs-keyword">else</span> &#123;<br>  <span class="hljs-comment">// 开启APP</span><br>  <span class="hljs-title function_">loadWinApp</span>();<br>&#125;<br><br>app.<span class="hljs-title function_">whenReady</span>().<span class="hljs-title function_">then</span>(<span class="hljs-function">()=&gt;</span> &#123;<br>  ....<br>  <span class="hljs-comment">// 只允许打开一个窗口</span><br><br>  app.<span class="hljs-title function_">on</span>(<span class="hljs-string">&#x27;second-instance&#x27;</span>, <span class="hljs-function">() =&gt;</span> &#123;<br>    win!.<span class="hljs-title function_">show</span>();<br>  &#125;);<br>&#125;)<br></code></pre></td></tr></table></figure></li>
 </ul>
-
+<h1 id="win7-桌面端支持"><a href="#win7-桌面端支持" class="headerlink" title="win7 桌面端支持"></a>win7 桌面端支持</h1><p>electron23.0 之后不再支持win7&amp;&amp;win8 等，详情见<a target="_blank" rel="noopener" href="https://github.com/electron/electron/tree/main">官方文档</a><br>如果程序需要支持可以将electron 降级版本</p>
+<ul>
+<li>electron 22.0</li>
+<li>electron-builder 22.10.5</li>
+</ul>
+<h1 id="win7-打包后程序安装提示启动错误"><a href="#win7-打包后程序安装提示启动错误" class="headerlink" title="win7 打包后程序安装提示启动错误"></a>win7 打包后程序安装提示启动错误</h1><p> 需要安装依微软常用的依赖库<br> <a href="/resource/%E5%BE%AE%E8%BD%AF%E5%B8%B8%E7%94%A8%E8%BF%90%E8%A1%8C%E5%BA%93%E5%90%88%E9%9B%86_2023.03.03.exe">微软常用运行库合集</a></p>
+<h1 id="客户端-getAppPath-含有-app-asar-问题处理"><a href="#客户端-getAppPath-含有-app-asar-问题处理" class="headerlink" title="客户端 getAppPath 含有 app.asar 问题处理"></a>客户端 getAppPath 含有 app.asar 问题处理</h1><p> getAppPath()可以获取到程序运行跟目录，打包后会有app.asar<br> 当前可以直接通过replace 函数替换 app.asar<br> 例如：<br> <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> appRootPath = app.<span class="hljs-title function_">getAppPath</span>().<span class="hljs-title function_">repace</span>(<span class="hljs-string">&#x27;app.asar&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>)<br><br></code></pre></td></tr></table></figure></p>
+<h1 id="vite-vue3-页面中图片显示错误问题处理"><a href="#vite-vue3-页面中图片显示错误问题处理" class="headerlink" title="vite-vue3 页面中图片显示错误问题处理"></a>vite-vue3 页面中图片显示错误问题处理</h1><p>图片地址为类似</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> img = <span class="hljs-string">&#x27;/img/test.png&#x27;</span><br></code></pre></td></tr></table></figure>
+<p>本地开发时预览正常electron 打包线上后显示地址找不到<br>处理方案将图片地址转为绝对地址路径</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> img = <span class="hljs-keyword">new</span> <span class="hljs-title function_">URL</span>(<span class="hljs-string">&#x27;/image/sludge.png&#x27;</span>, <span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">url</span>).<span class="hljs-property">href</span><br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -363,6 +373,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="../../../../11/28/algorithm/flip%20the%20string/" title="翻转字符串">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">翻转字符串</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
