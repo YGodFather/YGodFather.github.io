@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="../../../../img/fluid.png">
-  <link rel="icon" href="../../../../img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../../../../../img/fluid.png">
+  <link rel="icon" href="../../../../../img/fluid.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -16,29 +16,28 @@
   <meta name="author" content="Rui Yang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Inkscape SVG 自由绘图工具设置文档属性 单位设置  单位按需设置，可选px, mm 等 画布大小按需设置宽高 设置尺寸比例，此处会影响导出未svg 时的大小，建议默认设置为1  xml 快速编辑  通过右侧配置蓝可以快速获取页面上节点属性信息&amp;&amp; 编辑  导出文件">
+    <meta name="description" content="确定启用微前端处理公司业务时，通过微前端 4个关键性决策 考虑设计根据微前端架构决策：  微前端在架构中的定义 微前端的组合 微前端的路由 微前端之间的通信  定义微前端首先我们可以根据自身业务，判断前端业务试图是，横向拆分，还是纵向拆分。  横向业务如下所示业务在横向拆分时，一个视图上有多个微前端，这些组成部分可以由不同团队开发  纵向业务拆分如下所示纵向拆分业务中，一次视图上只有一个微前端，每">
 <meta property="og:type" content="article">
-<meta property="og:title" content="inkscape">
-<meta property="og:url" content="http://example.com/2023/09/08/inkscape/index.html">
+<meta property="og:title" content="微前端搭建总结">
+<meta property="og:url" content="http://example.com/2024/08/06/micro-web/micro-frontend-1/index.html">
 <meta property="og:site_name" content="irelia">
-<meta property="og:description" content="Inkscape SVG 自由绘图工具设置文档属性 单位设置  单位按需设置，可选px, mm 等 画布大小按需设置宽高 设置尺寸比例，此处会影响导出未svg 时的大小，建议默认设置为1  xml 快速编辑  通过右侧配置蓝可以快速获取页面上节点属性信息&amp;&amp; 编辑  导出文件">
+<meta property="og:description" content="确定启用微前端处理公司业务时，通过微前端 4个关键性决策 考虑设计根据微前端架构决策：  微前端在架构中的定义 微前端的组合 微前端的路由 微前端之间的通信  定义微前端首先我们可以根据自身业务，判断前端业务试图是，横向拆分，还是纵向拆分。  横向业务如下所示业务在横向拆分时，一个视图上有多个微前端，这些组成部分可以由不同团队开发  纵向业务拆分如下所示纵向拆分业务中，一次视图上只有一个微前端，每">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/inkscape/file-property.png">
-<meta property="og:image" content="http://example.com/img/inkscape/file-property.png">
-<meta property="og:image" content="http://example.com/img/inkscape/xml-editor.png">
-<meta property="og:image" content="http://example.com/img/inkscape/file-export.png">
-<meta property="article:published_time" content="2023-09-08T14:50:09.000Z">
-<meta property="article:modified_time" content="2023-09-08T15:44:17.664Z">
+<meta property="og:image" content="http://example.com/img/micro-app/micro-%E6%A8%AA%E5%90%91%E4%B8%9A%E5%8A%A1.png">
+<meta property="og:image" content="http://example.com/img/micro-app/micro-%E7%BA%B5%E5%90%91%E4%B8%9A%E5%8A%A1.png">
+<meta property="og:image" content="http://example.com/img/micro-app/micro-%E7%BA%B5%E5%90%91%E4%B8%9A%E5%8A%A1.png">
+<meta property="article:published_time" content="2024-08-06T15:11:39.000Z">
+<meta property="article:modified_time" content="2024-08-27T02:03:24.689Z">
 <meta property="article:author" content="Rui Yang">
-<meta property="article:tag" content="svg">
+<meta property="article:tag" content="前端">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/inkscape/file-property.png">
+<meta name="twitter:image" content="http://example.com/img/micro-app/micro-%E6%A8%AA%E5%90%91%E4%B8%9A%E5%8A%A1.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>inkscape - irelia</title>
+  <title>微前端搭建总结 - irelia</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -62,12 +61,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="../../../../css/main.css" />
+<link  rel="stylesheet" href="../../../../../css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="../../../../css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="../../../../../css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="../../../../css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="../../../../../css/highlight-dark.css" />
   
 
 
@@ -83,8 +82,8 @@
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="../../../../js/utils.js" ></script>
-  <script  src="../../../../js/color-schema.js" ></script>
+  <script  src="../../../../../js/utils.js" ></script>
+  <script  src="../../../../../js/color-schema.js" ></script>
   
 
 
@@ -101,7 +100,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="../../../../index.html">
+    <a class="navbar-brand" href="../../../../../index.html">
       <strong>irelia</strong>
     </a>
 
@@ -120,7 +119,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="../../../../index.html">
+              <a class="nav-link" href="../../../../../index.html">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -132,7 +131,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="../../../../archives/">
+              <a class="nav-link" href="../../../../../archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -144,7 +143,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="../../../../categories/">
+              <a class="nav-link" href="../../../../../categories/">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -156,7 +155,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="../../../../tags/">
+              <a class="nav-link" href="../../../../../tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -168,7 +167,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="../../../../about/">
+              <a class="nav-link" href="../../../../../about/">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -198,13 +197,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('../../../../img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('../../../../../img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="inkscape"></span>
+            <span id="subtitle" data-typed-text="微前端搭建总结"></span>
           
         </div>
 
@@ -215,8 +214,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-09-08 22:50" pubdate>
-          2023年9月8日 晚上
+        <time datetime="2024-08-06 23:11" pubdate>
+          2024年8月6日 晚上
         </time>
       </span>
     
@@ -227,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          128 字
+          1.3k 字
         
       </span>
     
@@ -238,7 +237,7 @@
         
         
         
-          2 分钟
+          12 分钟
         
       </span>
     
@@ -275,23 +274,53 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">inkscape</h1>
+            <h1 id="seo-header">微前端搭建总结</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="Inkscape-SVG-自由绘图工具"><a href="#Inkscape-SVG-自由绘图工具" class="headerlink" title="Inkscape SVG 自由绘图工具"></a><a target="_blank" rel="noopener" href="https://inkscape.org/zh-hans/doc/tutorials/basic/tutorial-basic.html">Inkscape</a> SVG 自由绘图工具</h1><h2 id="设置文档属性"><a href="#设置文档属性" class="headerlink" title="设置文档属性"></a>设置文档属性</h2><p><img src="/img/inkscape/file-property.png" srcset="/img/loading.gif" lazyload></p>
-<h2 id="单位设置"><a href="#单位设置" class="headerlink" title="单位设置"></a>单位设置</h2><p><img src="/img/inkscape/file-property.png" srcset="/img/loading.gif" lazyload></p>
-<ol>
-<li>单位按需设置，可选px, mm 等</li>
-<li>画布大小按需设置宽高</li>
-<li>设置尺寸比例，此处会影响导出未svg 时的大小，建议默认设置为1</li>
-</ol>
-<h2 id="xml-快速编辑"><a href="#xml-快速编辑" class="headerlink" title="xml 快速编辑"></a>xml 快速编辑</h2><p><img src="/img/inkscape/xml-editor.png" srcset="/img/loading.gif" lazyload></p>
+                <p>确定启用微前端处理公司业务时，通过微前端 <strong>4个关键性决策</strong> 考虑设计<br>根据微前端架构决策：</p>
 <ul>
-<li>通过右侧配置蓝可以快速获取页面上节点属性信息&amp;&amp; 编辑</li>
+<li>微前端在架构中的定义</li>
+<li>微前端的组合</li>
+<li>微前端的路由</li>
+<li>微前端之间的通信</li>
 </ul>
-<h2 id="导出文件"><a href="#导出文件" class="headerlink" title="导出文件"></a>导出文件</h2><p><img src="/img/inkscape/file-export.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="定义微前端"><a href="#定义微前端" class="headerlink" title="定义微前端"></a>定义微前端</h3><p>首先我们可以根据自身业务，判断前端业务试图是，横向拆分，还是纵向拆分。</p>
+<ul>
+<li><p>横向业务如下所示<br>业务在横向拆分时，一个视图上有多个微前端，这些组成部分可以由不同团队开发<br><img src="/img/micro-app/micro-%E6%A8%AA%E5%90%91%E4%B8%9A%E5%8A%A1.png" srcset="/img/loading.gif" lazyload></p>
+</li>
+<li><p>纵向业务拆分如下所示<br>纵向拆分业务中，一次视图上只有一个微前端，每个团队只开发自己的业务规则<br><img src="/img/micro-app/micro-%E7%BA%B5%E5%90%91%E4%B8%9A%E5%8A%A1.png" srcset="/img/loading.gif" lazyload></p>
+</li>
+</ul>
+<h3 id="微前端组合"><a href="#微前端组合" class="headerlink" title="微前端组合"></a>微前端组合</h3><p>微前端组合分为</p>
+<ul>
+<li>客户端组合</li>
+<li>边缘侧组合</li>
+<li>服务端组合</li>
+</ul>
+<p>目前根据业务选择自己所需的组合方案，目前一般会选择客户端组合，方式客户端组合方式，即通过一个APP shell 通过URL来加载不同微前端，当前开源的技术站有如下几种</p>
+<ol>
+<li>SPA</li>
+<li>qiankun</li>
+<li>micro-app<br>当前也可以直接通过Iframe 加载实现</li>
+</ol>
+<h3 id="微前端路由"><a href="#微前端路由" class="headerlink" title="微前端路由"></a>微前端路由</h3><p>微前端路由两种组合方式</p>
+<ul>
+<li>服务端路由</li>
+<li>边缘侧路由</li>
+<li>客户端路由</li>
+</ul>
+<p>如果技术站上处理使用SPA这种技术站，建议通过客户端进行路由组合，通过客户端路由组合时，在基座中处理路由，即可通过配置等操作实现复杂路由操作。</p>
+<h3 id="微前端通信"><a href="#微前端通信" class="headerlink" title="微前端通信"></a>微前端通信</h3><p>理论上当业务独立时，每个微前端业务独立，不需要和其他微前端通信，在实际业务中，每个微前端确实需要根据业务进行通信。通信原则是，每个微前端不知道其他微前端的存在，否则违反的独立部署的原则。</p>
+<p>通信方式可以采用如下两种</p>
+<ul>
+<li><p>全局事件总线<br>在每一个微前端中注入事件总线，每个微前端只定义自己关心的事件信息<br><img src="/img/micro-app/micro-%E7%BA%B5%E5%90%91%E4%B8%9A%E5%8A%A1.png" srcset="/img/loading.gif" lazyload></p>
+</li>
+<li><p>通过自定义事件<br>使用自定义事件的好处是可以将通信逻辑封装在各个微前端内部，使得各个微前端之间的通信更加独立和可控。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 通过自定义事件</span><br><span class="hljs-comment">// 创建一个自定义事件</span><br><span class="hljs-keyword">const</span> customEvent = <span class="hljs-keyword">new</span> <span class="hljs-title class_">CustomEvent</span>(<span class="hljs-string">&#x27;myCustomEvent&#x27;</span>, &#123;<br>  <span class="hljs-attr">detail</span>: &#123;<br>    <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;Hello from custom event!&#x27;</span><br>  &#125;<br>&#125;);<br><br><span class="hljs-comment">// 监听自定义事件</span><br><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;myCustomEvent&#x27;</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(event.<span class="hljs-property">detail</span>.<span class="hljs-property">message</span>);<br>&#125;);<br><br><span class="hljs-comment">// 触发自定义事件</span><br><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">dispatchEvent</span>(customEvent);<br></code></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 通过自定义事件</span><br><span class="hljs-comment">// 创建一个自定义事件</span><br><span class="hljs-keyword">const</span> customEvent = <span class="hljs-keyword">new</span> <span class="hljs-title class_">CustomEvent</span>(<span class="hljs-string">&#x27;myCustomEvent&#x27;</span>, &#123;<br>  <span class="hljs-attr">detail</span>: &#123;<br>    <span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;Hello from custom event!&#x27;</span><br>  &#125;<br>&#125;);<br><br><span class="hljs-comment">// 监听自定义事件</span><br><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;myCustomEvent&#x27;</span>, <span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(event.<span class="hljs-property">detail</span>.<span class="hljs-property">message</span>);<br>&#125;);<br><br><span class="hljs-comment">// 触发自定义事件</span><br><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">dispatchEvent</span>(customEvent);<br></code></pre></td></tr></table></figure></li>
+</ul>
 
                 
               </div>
@@ -300,11 +329,32 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="../../../../../categories/%E5%BE%AE%E5%89%8D%E7%AB%AF/" class="category-chain-item">微前端</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
   
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="../../../../tags/svg/" class="print-no-link">#svg</a>
+        <a href="../../../../../tags/%E5%89%8D%E7%AB%AF/" class="print-no-link">#前端</a>
       
     </div>
   
@@ -316,8 +366,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>inkscape</div>
-      <div>http://example.com/2023/09/08/inkscape/</div>
+      <div>微前端搭建总结</div>
+      <div>http://example.com/2024/08/06/micro-web/micro-frontend-1/</div>
     </div>
     <div class="license-meta">
       
@@ -329,7 +379,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年9月8日</div>
+          <div>2024年8月6日</div>
         </div>
       
       
@@ -361,18 +411,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="../../10/svg-animate/svg-animate/" title="svg 动画">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">svg 动画</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="../../07/micro-web/micro-app_01/" title="micro-app 基座应用和子应用共享window 全局变量">
-                        <span class="hidden-mobile">micro-app 基座应用和子应用共享window 全局变量</span>
+                      <a href="../../../../06/10/frontend-big-data/batch-render/" title="前端x6分批万级节点">
+                        <span class="hidden-mobile">前端x6分批万级节点</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -525,8 +569,8 @@
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="../../../../js/events.js" ></script>
-<script  src="../../../../js/plugins.js" ></script>
+<script  src="../../../../../js/events.js" ></script>
+<script  src="../../../../../js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -548,7 +592,7 @@
 
 
   
-    <script  src="../../../../js/img-lazyload.js" ></script>
+    <script  src="../../../../../js/img-lazyload.js" ></script>
   
 
 
@@ -647,7 +691,7 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="../../../../js/local-search.js" ></script>
+  <script  src="../../../../../js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -657,7 +701,7 @@
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="../../../../js/boot.js" ></script>
+<script  src="../../../../../js/boot.js" ></script>
 
 
   
