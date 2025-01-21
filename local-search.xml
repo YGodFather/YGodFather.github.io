@@ -118,6 +118,25 @@
   
   
   <entry>
+    <title>常用的工具包</title>
+    <link href="/2024/01/17/commonly-used-toolkits/index/"/>
+    <url>/2024/01/17/commonly-used-toolkits/index/</url>
+    
+    <content type="html"><![CDATA[<h1 id="vscode插件"><a href="#vscode插件" class="headerlink" title="vscode插件"></a>vscode插件</h1><h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">Name:</span> <span class="hljs-string">any-rule</span><br><span class="hljs-attr">Id:</span> <span class="hljs-string">russell.any-rule</span><br><span class="hljs-attr">Description:</span> <span class="hljs-string">你要的&quot;正则&quot;都在这!</span><br><span class="hljs-attr">Version:</span> <span class="hljs-number">0.3</span><span class="hljs-number">.18</span><br><span class="hljs-attr">Publisher:</span> <span class="hljs-string">铁皮饭盒</span><br><span class="hljs-attr">VS Marketplace Link:</span> <span class="hljs-string">https://marketplace.visualstudio.com/items?itemName=russell.any-rule</span><br></code></pre></td></tr></table></figure><h2 id="VUE官方插件"><a href="#VUE官方插件" class="headerlink" title="VUE官方插件"></a>VUE官方插件</h2><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs avrasm"><span class="hljs-symbol">Name:</span> Vue - Official<br><span class="hljs-symbol">Id:</span> Vue.volar<br><span class="hljs-symbol">Description:</span> Language Support for Vue<br><span class="hljs-symbol">Version:</span> <span class="hljs-number">2.0</span><span class="hljs-number">.8</span><br><span class="hljs-symbol">Publisher:</span> Vue<br></code></pre></td></tr></table></figure><h2 id="方法-文件注释"><a href="#方法-文件注释" class="headerlink" title="方法&amp;文件注释"></a>方法&amp;文件注释</h2><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">Name:</span> koroFileHeader<br><span class="hljs-symbol">Id:</span> OBKoro1.korofileheader<br><span class="hljs-symbol">Description:</span> 用于生成文件头部注释和函数注释的插件，支持所有主流语言,功能强大，灵活方便，文档齐全，食用简单！<br><span class="hljs-symbol">Version:</span> <span class="hljs-number">4.9</span><span class="hljs-number">.3</span><br><span class="hljs-symbol">Publisher:</span> OBKoro1<br>VS Marketplace Link: https:<span class="hljs-comment">//marketplace.visualstudio.com/items?itemName=OBKoro1.korofileheader</span><br></code></pre></td></tr></table></figure><h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>svg</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>wasm编译处理</title>
     <link href="/2024/01/14/wasm-md/"/>
     <url>/2024/01/14/wasm-md/</url>
